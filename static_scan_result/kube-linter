@@ -1,0 +1,238 @@
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/cache-store/deployment.yaml: (object: secure-middleware/cache-store-deployment apps/v1, Kind=Deployment) The container "cache-store" is using an invalid container image, "madhuakula/k8s-goat-cache-store". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/cache-store/deployment.yaml: (object: secure-middleware/cache-store-deployment apps/v1, Kind=Deployment) container "cache-store" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/cache-store/deployment.yaml: (object: secure-middleware/cache-store-deployment apps/v1, Kind=Deployment) container "cache-store" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/cache-store/deployment.yaml: (object: secure-middleware/cache-store-deployment apps/v1, Kind=Deployment) container "cache-store" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/cache-store/deployment.yaml: (object: secure-middleware/cache-store-deployment apps/v1, Kind=Deployment) container "cache-store" has cpu limit 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/cache-store/deployment.yaml: (object: secure-middleware/cache-store-deployment apps/v1, Kind=Deployment) container "cache-store" has memory request 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/cache-store/deployment.yaml: (object: secure-middleware/cache-store-deployment apps/v1, Kind=Deployment) container "cache-store" has memory limit 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/build-code/deployment.yaml: (object: <no namespace>/build-code-deployment apps/v1, Kind=Deployment) The container "build-code" is using an invalid container image, "madhuakula/k8s-goat-build-code". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/build-code/deployment.yaml: (object: <no namespace>/build-code-deployment apps/v1, Kind=Deployment) container "build-code" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/build-code/deployment.yaml: (object: <no namespace>/build-code-deployment apps/v1, Kind=Deployment) container "build-code" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/build-code/deployment.yaml: (object: <no namespace>/build-code-deployment apps/v1, Kind=Deployment) container "build-code" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/build-code/deployment.yaml: (object: <no namespace>/build-code-deployment apps/v1, Kind=Deployment) container "build-code" has memory request 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/docker-bench-security/deployment.yaml: (object: <no namespace>/docker-bench-security apps/v1, Kind=DaemonSet) host system directory "/var/run/docker.sock" is mounted on container "docker-bench" (check: docker-sock, remediation: Ensure the Docker socket is not mounted inside any containers by removing the associated  Volume and VolumeMount in deployment yaml specification. If the Docker socket is mounted inside a container it could allow processes running within  the container to execute Docker commands which would effectively allow for full control of the host.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/docker-bench-security/deployment.yaml: (object: <no namespace>/docker-bench-security apps/v1, Kind=DaemonSet) container "docker-bench" has DROP capabilities: [], but does not drop capability "NET_RAW" which is required (check: drop-net-raw-capability, remediation: NET_RAW makes it so that an application within the container is able to craft raw packets, use raw sockets, and bind to any address. Remove this capability in the containers under containers security contexts.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/docker-bench-security/deployment.yaml: (object: <no namespace>/docker-bench-security apps/v1, Kind=DaemonSet) resource shares host's IPC namespace (via hostIPC=true). (check: host-ipc, remediation: Ensure the host's IPC namespace is not shared.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/docker-bench-security/deployment.yaml: (object: <no namespace>/docker-bench-security apps/v1, Kind=DaemonSet) resource shares host's network namespace (via hostNetwork=true). (check: host-network, remediation: Ensure the host's network namespace is not shared.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/docker-bench-security/deployment.yaml: (object: <no namespace>/docker-bench-security apps/v1, Kind=DaemonSet) object shares the host's process namespace (via hostPID=true). (check: host-pid, remediation: Ensure the host's process namespace is not shared.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/docker-bench-security/deployment.yaml: (object: <no namespace>/docker-bench-security apps/v1, Kind=DaemonSet) The container "docker-bench" is using an invalid container image, "madhuakula/hacker-container". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/docker-bench-security/deployment.yaml: (object: <no namespace>/docker-bench-security apps/v1, Kind=DaemonSet) container "docker-bench" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/docker-bench-security/deployment.yaml: (object: <no namespace>/docker-bench-security apps/v1, Kind=DaemonSet) container "docker-bench" is Privileged hence allows privilege escalation. (check: privilege-escalation-container, remediation: Ensure containers do not allow privilege escalation by setting allowPrivilegeEscalation=false, privileged=false and removing CAP_SYS_ADMIN capability. See https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for more details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/docker-bench-security/deployment.yaml: (object: <no namespace>/docker-bench-security apps/v1, Kind=DaemonSet) container "docker-bench" is privileged (check: privileged-container, remediation: Do not run your container as privileged unless it is required.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/docker-bench-security/deployment.yaml: (object: <no namespace>/docker-bench-security apps/v1, Kind=DaemonSet) container "docker-bench" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/docker-bench-security/deployment.yaml: (object: <no namespace>/docker-bench-security apps/v1, Kind=DaemonSet) host system directory "/etc" is mounted on container "docker-bench" (check: sensitive-host-mounts, remediation: Ensure sensitive host system directories are not mounted in containers by removing those Volumes and VolumeMounts.)
+
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kubernetes-goat-home/deployment.yaml: (object: <no namespace>/kubernetes-goat-home-deployment apps/v1, Kind=Deployment) The container "kubernetes-goat-home" is using an invalid container image, "madhuakula/k8s-goat-home". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kubernetes-goat-home/deployment.yaml: (object: <no namespace>/kubernetes-goat-home-deployment apps/v1, Kind=Deployment) container "kubernetes-goat-home" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kubernetes-goat-home/deployment.yaml: (object: <no namespace>/kubernetes-goat-home-deployment apps/v1, Kind=Deployment) container "kubernetes-goat-home" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kubernetes-goat-home/deployment.yaml: (object: <no namespace>/kubernetes-goat-home-deployment apps/v1, Kind=Deployment) container "kubernetes-goat-home" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kubernetes-goat-home/deployment.yaml: (object: <no namespace>/kubernetes-goat-home-deployment apps/v1, Kind=Deployment) container "kubernetes-goat-home" has memory request 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+KubeLinter 0.6.4
+
+No lint errors found!
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hidden-in-layers/deployment.yaml: (object: <no namespace>/hidden-in-layers batch/v1, Kind=Job) The container "hidden-in-layers" is using an invalid container image, "madhuakula/k8s-goat-hidden-in-layers". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hidden-in-layers/deployment.yaml: (object: <no namespace>/hidden-in-layers batch/v1, Kind=Job) container "hidden-in-layers" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hidden-in-layers/deployment.yaml: (object: <no namespace>/hidden-in-layers batch/v1, Kind=Job) container "hidden-in-layers" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hidden-in-layers/deployment.yaml: (object: <no namespace>/hidden-in-layers batch/v1, Kind=Job) container "hidden-in-layers" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hidden-in-layers/deployment.yaml: (object: <no namespace>/hidden-in-layers batch/v1, Kind=Job) container "hidden-in-layers" has cpu limit 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hidden-in-layers/deployment.yaml: (object: <no namespace>/hidden-in-layers batch/v1, Kind=Job) container "hidden-in-layers" has memory request 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hidden-in-layers/deployment.yaml: (object: <no namespace>/hidden-in-layers batch/v1, Kind=Job) container "hidden-in-layers" has memory limit 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/batch-check/job.yaml: (object: <no namespace>/batch-check-job batch/v1, Kind=Job) The container "batch-check" is using an invalid container image, "madhuakula/k8s-goat-batch-check". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/batch-check/job.yaml: (object: <no namespace>/batch-check-job batch/v1, Kind=Job) container "batch-check" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/batch-check/job.yaml: (object: <no namespace>/batch-check-job batch/v1, Kind=Job) container "batch-check" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/batch-check/job.yaml: (object: <no namespace>/batch-check-job batch/v1, Kind=Job) container "batch-check" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/batch-check/job.yaml: (object: <no namespace>/batch-check-job batch/v1, Kind=Job) container "batch-check" has cpu limit 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/batch-check/job.yaml: (object: <no namespace>/batch-check-job batch/v1, Kind=Job) container "batch-check" has memory request 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/batch-check/job.yaml: (object: <no namespace>/batch-check-job batch/v1, Kind=Job) container "batch-check" has memory limit 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hunger-check/deployment.yaml: (object: big-monolith/hunger-check-deployment apps/v1, Kind=Deployment) The container "hunger-check" is using an invalid container image, "madhuakula/k8s-goat-hunger-check". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hunger-check/deployment.yaml: (object: big-monolith/hunger-check-deployment apps/v1, Kind=Deployment) container "hunger-check" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hunger-check/deployment.yaml: (object: big-monolith/hunger-check-deployment apps/v1, Kind=Deployment) container "hunger-check" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hunger-check/deployment.yaml: (object: big-monolith/hunger-check-deployment apps/v1, Kind=Deployment) container "hunger-check" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hunger-check/deployment.yaml: (object: big-monolith/hunger-check-deployment apps/v1, Kind=Deployment) container "hunger-check" has cpu limit 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hunger-check/deployment.yaml: (object: big-monolith/hunger-check-deployment apps/v1, Kind=Deployment) container "hunger-check" has memory request 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/hunger-check/deployment.yaml: (object: big-monolith/hunger-check-deployment apps/v1, Kind=Deployment) container "hunger-check" has memory limit 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/poor-registry/deployment.yaml: (object: <no namespace>/poor-registry-deployment apps/v1, Kind=Deployment) The container "poor-registry" is using an invalid container image, "madhuakula/k8s-goat-poor-registry". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/poor-registry/deployment.yaml: (object: <no namespace>/poor-registry-deployment apps/v1, Kind=Deployment) container "poor-registry" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/poor-registry/deployment.yaml: (object: <no namespace>/poor-registry-deployment apps/v1, Kind=Deployment) container "poor-registry" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/poor-registry/deployment.yaml: (object: <no namespace>/poor-registry-deployment apps/v1, Kind=Deployment) container "poor-registry" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/poor-registry/deployment.yaml: (object: <no namespace>/poor-registry-deployment apps/v1, Kind=Deployment) container "poor-registry" has memory request 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/master-job.yaml: (object: <no namespace>/kube-bench-master batch/v1, Kind=Job) object shares the host's process namespace (via hostPID=true). (check: host-pid, remediation: Ensure the host's process namespace is not shared.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/master-job.yaml: (object: <no namespace>/kube-bench-master batch/v1, Kind=Job) The container "kube-bench" is using an invalid container image, "docker.io/aquasec/kube-bench:latest". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/master-job.yaml: (object: <no namespace>/kube-bench-master batch/v1, Kind=Job) container "kube-bench" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/master-job.yaml: (object: <no namespace>/kube-bench-master batch/v1, Kind=Job) container "kube-bench" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/master-job.yaml: (object: <no namespace>/kube-bench-master batch/v1, Kind=Job) container "kube-bench" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/master-job.yaml: (object: <no namespace>/kube-bench-master batch/v1, Kind=Job) container "kube-bench" has cpu limit 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/master-job.yaml: (object: <no namespace>/kube-bench-master batch/v1, Kind=Job) container "kube-bench" has memory request 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/master-job.yaml: (object: <no namespace>/kube-bench-master batch/v1, Kind=Job) container "kube-bench" has memory limit 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/node-job.yaml: (object: <no namespace>/kube-bench-node batch/v1, Kind=Job) object shares the host's process namespace (via hostPID=true). (check: host-pid, remediation: Ensure the host's process namespace is not shared.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/node-job.yaml: (object: <no namespace>/kube-bench-node batch/v1, Kind=Job) The container "kube-bench" is using an invalid container image, "docker.io/aquasec/kube-bench:latest". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/node-job.yaml: (object: <no namespace>/kube-bench-node batch/v1, Kind=Job) container "kube-bench" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/node-job.yaml: (object: <no namespace>/kube-bench-node batch/v1, Kind=Job) container "kube-bench" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/node-job.yaml: (object: <no namespace>/kube-bench-node batch/v1, Kind=Job) container "kube-bench" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/node-job.yaml: (object: <no namespace>/kube-bench-node batch/v1, Kind=Job) container "kube-bench" has cpu limit 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/node-job.yaml: (object: <no namespace>/kube-bench-node batch/v1, Kind=Job) container "kube-bench" has memory request 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/kube-bench-security/node-job.yaml: (object: <no namespace>/kube-bench-node batch/v1, Kind=Job) container "kube-bench" has memory limit 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) host system directory "/var/run/docker.sock" is mounted on container "health-check" (check: docker-sock, remediation: Ensure the Docker socket is not mounted inside any containers by removing the associated  Volume and VolumeMount in deployment yaml specification. If the Docker socket is mounted inside a container it could allow processes running within  the container to execute Docker commands which would effectively allow for full control of the host.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) The container "health-check" is using an invalid container image, "madhuakula/k8s-goat-health-check". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) container "health-check" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) container "health-check" is Privileged hence allows privilege escalation. (check: privilege-escalation-container, remediation: Ensure containers do not allow privilege escalation by setting allowPrivilegeEscalation=false, privileged=false and removing CAP_SYS_ADMIN capability. See https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for more details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) container "health-check" is privileged (check: privileged-container, remediation: Do not run your container as privileged unless it is required.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) container "health-check" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) container "health-check" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) container "health-check" has memory request 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment-kind.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) host system directory "/var/run/docker.sock" is mounted on container "health-check" (check: docker-sock, remediation: Ensure the Docker socket is not mounted inside any containers by removing the associated  Volume and VolumeMount in deployment yaml specification. If the Docker socket is mounted inside a container it could allow processes running within  the container to execute Docker commands which would effectively allow for full control of the host.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment-kind.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) The container "health-check" is using an invalid container image, "madhuakula/k8s-goat-health-check". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment-kind.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) container "health-check" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment-kind.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) container "health-check" is Privileged hence allows privilege escalation. (check: privilege-escalation-container, remediation: Ensure containers do not allow privilege escalation by setting allowPrivilegeEscalation=false, privileged=false and removing CAP_SYS_ADMIN capability. See https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for more details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment-kind.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) container "health-check" is privileged (check: privileged-container, remediation: Do not run your container as privileged unless it is required.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment-kind.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) container "health-check" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment-kind.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) container "health-check" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/health-check/deployment-kind.yaml: (object: <no namespace>/health-check-deployment apps/v1, Kind=Deployment) container "health-check" has memory request 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/internal-proxy/deployment.yaml: (object: <no namespace>/internal-proxy-deployment apps/v1, Kind=Deployment) The container "internal-api" is using an invalid container image, "madhuakula/k8s-goat-internal-api". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/internal-proxy/deployment.yaml: (object: <no namespace>/internal-proxy-deployment apps/v1, Kind=Deployment) The container "info-app" is using an invalid container image, "madhuakula/k8s-goat-info-app". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/internal-proxy/deployment.yaml: (object: <no namespace>/internal-proxy-deployment apps/v1, Kind=Deployment) container "internal-api" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/internal-proxy/deployment.yaml: (object: <no namespace>/internal-proxy-deployment apps/v1, Kind=Deployment) container "info-app" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/internal-proxy/deployment.yaml: (object: <no namespace>/internal-proxy-deployment apps/v1, Kind=Deployment) container "internal-api" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/internal-proxy/deployment.yaml: (object: <no namespace>/internal-proxy-deployment apps/v1, Kind=Deployment) container "info-app" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+KubeLinter 0.6.4
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/system-monitor/deployment.yaml: (object: <no namespace>/system-monitor-deployment apps/v1, Kind=Deployment) resource shares host's IPC namespace (via hostIPC=true). (check: host-ipc, remediation: Ensure the host's IPC namespace is not shared.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/system-monitor/deployment.yaml: (object: <no namespace>/system-monitor-deployment apps/v1, Kind=Deployment) object shares the host's process namespace (via hostPID=true). (check: host-pid, remediation: Ensure the host's process namespace is not shared.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/system-monitor/deployment.yaml: (object: <no namespace>/system-monitor-deployment apps/v1, Kind=Deployment) The container "system-monitor" is using an invalid container image, "madhuakula/k8s-goat-system-monitor". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/system-monitor/deployment.yaml: (object: <no namespace>/system-monitor-deployment apps/v1, Kind=Deployment) container "system-monitor" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/system-monitor/deployment.yaml: (object: <no namespace>/system-monitor-deployment apps/v1, Kind=Deployment) container "system-monitor" has AllowPrivilegeEscalation set to true. (check: privilege-escalation-container, remediation: Ensure containers do not allow privilege escalation by setting allowPrivilegeEscalation=false, privileged=false and removing CAP_SYS_ADMIN capability. See https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for more details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/system-monitor/deployment.yaml: (object: <no namespace>/system-monitor-deployment apps/v1, Kind=Deployment) container "system-monitor" is privileged (check: privileged-container, remediation: Do not run your container as privileged unless it is required.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/system-monitor/deployment.yaml: (object: <no namespace>/system-monitor-deployment apps/v1, Kind=Deployment) container "system-monitor" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/system-monitor/deployment.yaml: (object: <no namespace>/system-monitor-deployment apps/v1, Kind=Deployment) host system directory "/" is mounted on container "system-monitor" (check: sensitive-host-mounts, remediation: Ensure sensitive host system directories are not mounted in containers by removing those Volumes and VolumeMounts.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/system-monitor/deployment.yaml: (object: <no namespace>/system-monitor-deployment apps/v1, Kind=Deployment) container "system-monitor" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/Users/nguyenlam/Thesis/kubernetes-goat/scenarios/system-monitor/deployment.yaml: (object: <no namespace>/system-monitor-deployment apps/v1, Kind=Deployment) container "system-monitor" has memory request 0 (check: unset-memory-requirements, remediation: Set memory requests and limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+KubeLinter 0.6.4
+
+No lint errors found!

@@ -1,0 +1,613 @@
+apps/v1/Deployment cache-store-deployment in secure-middleware                💥
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · cache-store -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Container Security Context User Group ID
+        · cache-store -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · cache-store -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Resources
+        · cache-store -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · cache-store -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · cache-store -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · cache-store -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Image Tag
+        · cache-store -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Deployment has PodDisruptionBudget
+        · No matching PodDisruptionBudget was found
+            It's recommended to define a PodDisruptionBudget to avoid
+            unexpected downtime during Kubernetes maintenance operations, such
+            as when draining a node.
+    [WARNING] Deployment has host PodAntiAffinity
+        · Deployment does not have a host podAntiAffinity set
+            It's recommended to set a podAntiAffinity that stops multiple pods
+            from a deployment from being scheduled on the same node. This
+            increases availability in case the node becomes unavailable.
+v1/Service cache-store-service in secure-middleware                           ✅
+apps/v1/Deployment build-code-deployment                                      💥
+    [WARNING] Container Resources
+        · build-code -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · build-code -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Image Tag
+        · build-code -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · build-code -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Container Security Context User Group ID
+        · build-code -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · build-code -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [WARNING] Deployment has host PodAntiAffinity
+        · Deployment does not have a host podAntiAffinity set
+            It's recommended to set a podAntiAffinity that stops multiple pods
+            from a deployment from being scheduled on the same node. This
+            increases availability in case the node becomes unavailable.
+    [CRITICAL] Deployment has PodDisruptionBudget
+        · No matching PodDisruptionBudget was found
+            It's recommended to define a PodDisruptionBudget to avoid
+            unexpected downtime during Kubernetes maintenance operations, such
+            as when draining a node.
+v1/Service build-code-service                                                 ✅
+apps/v1/DaemonSet docker-bench-security                                       💥
+    [CRITICAL] Container Image Tag
+        · docker-bench -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · docker-bench -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Security Context Privileged
+        · docker-bench -> The container is privileged
+            Set securityContext.privileged to false. Privileged containers can
+            access all devices on the host, and grants almost the same access as
+            non-containerized processes on the host.
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · docker-bench -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Security Context User Group ID
+        · docker-bench -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · docker-bench -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+apps/v1/Deployment kubernetes-goat-home-deployment                            💥
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Security Context User Group ID
+        · kubernetes-goat-home -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · kubernetes-goat-home -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [WARNING] Container Resources
+        · kubernetes-goat-home -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · kubernetes-goat-home -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Image Tag
+        · kubernetes-goat-home -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · kubernetes-goat-home -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Deployment has PodDisruptionBudget
+        · No matching PodDisruptionBudget was found
+            It's recommended to define a PodDisruptionBudget to avoid
+            unexpected downtime during Kubernetes maintenance operations, such
+            as when draining a node.
+    [WARNING] Deployment has host PodAntiAffinity
+        · Deployment does not have a host podAntiAffinity set
+            It's recommended to set a podAntiAffinity that stops multiple pods
+            from a deployment from being scheduled on the same node. This
+            increases availability in case the node becomes unavailable.
+v1/Service kubernetes-goat-home-service                                       ✅
+batch/v1/Job hidden-in-layers                                                 💥
+    [CRITICAL] Container Resources
+        · hidden-in-layers -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · hidden-in-layers -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · hidden-in-layers -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · hidden-in-layers -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Security Context User Group ID
+        · hidden-in-layers -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · hidden-in-layers -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · hidden-in-layers -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Image Tag
+        · hidden-in-layers -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+batch/v1/Job batch-check-job                                                  💥
+    [CRITICAL] Container Resources
+        · batch-check -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · batch-check -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · batch-check -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · batch-check -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Image Tag
+        · batch-check -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · batch-check -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Security Context User Group ID
+        · batch-check -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · batch-check -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+apps/v1/Deployment hunger-check-deployment in big-monolith                    💥
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Image Tag
+        · hunger-check -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · hunger-check -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · hunger-check -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Resources
+        · hunger-check -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · hunger-check -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · hunger-check -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · hunger-check -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Security Context User Group ID
+        · hunger-check -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Deployment has PodDisruptionBudget
+        · No matching PodDisruptionBudget was found
+            It's recommended to define a PodDisruptionBudget to avoid
+            unexpected downtime during Kubernetes maintenance operations, such
+            as when draining a node.
+    [WARNING] Deployment has host PodAntiAffinity
+        · Deployment does not have a host podAntiAffinity set
+            It's recommended to set a podAntiAffinity that stops multiple pods
+            from a deployment from being scheduled on the same node. This
+            increases availability in case the node becomes unavailable.
+v1/Service hunger-check-service in big-monolith                               ✅
+apps/v1/Deployment poor-registry-deployment                                   💥
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · poor-registry -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · poor-registry -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · poor-registry -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [WARNING] Container Resources
+        · poor-registry -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · poor-registry -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Image Tag
+        · poor-registry -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Deployment has PodDisruptionBudget
+        · No matching PodDisruptionBudget was found
+            It's recommended to define a PodDisruptionBudget to avoid
+            unexpected downtime during Kubernetes maintenance operations, such
+            as when draining a node.
+    [WARNING] Deployment has host PodAntiAffinity
+        · Deployment does not have a host podAntiAffinity set
+            It's recommended to set a podAntiAffinity that stops multiple pods
+            from a deployment from being scheduled on the same node. This
+            increases availability in case the node becomes unavailable.
+v1/Service poor-registry-service                                              ✅
+batch/v1/Job kube-bench-master                                                💥
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Security Context User Group ID
+        · kube-bench -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · kube-bench -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Resources
+        · kube-bench -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · kube-bench -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · kube-bench -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · kube-bench -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Image Tag
+        · kube-bench -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · kube-bench -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+batch/v1/Job kube-bench-node                                                  💥
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · kube-bench -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · kube-bench -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Resources
+        · kube-bench -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · kube-bench -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · kube-bench -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · kube-bench -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Image Tag
+        · kube-bench -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Container Security Context User Group ID
+        · kube-bench -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+apps/v1/Deployment health-check-deployment                                    💥
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · health-check -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · health-check -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Security Context User Group ID
+        · health-check -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · health-check -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [WARNING] Container Resources
+        · health-check -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · health-check -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Security Context Privileged
+        · health-check -> The container is privileged
+            Set securityContext.privileged to false. Privileged containers can
+            access all devices on the host, and grants almost the same access as
+            non-containerized processes on the host.
+    [CRITICAL] Container Image Tag
+        · health-check -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Deployment has PodDisruptionBudget
+        · No matching PodDisruptionBudget was found
+            It's recommended to define a PodDisruptionBudget to avoid
+            unexpected downtime during Kubernetes maintenance operations, such
+            as when draining a node.
+    [WARNING] Deployment has host PodAntiAffinity
+        · Deployment does not have a host podAntiAffinity set
+            It's recommended to set a podAntiAffinity that stops multiple pods
+            from a deployment from being scheduled on the same node. This
+            increases availability in case the node becomes unavailable.
+v1/Service health-check-service                                               ✅
+apps/v1/Deployment health-check-deployment                                    💥
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Security Context Privileged
+        · health-check -> The container is privileged
+            Set securityContext.privileged to false. Privileged containers can
+            access all devices on the host, and grants almost the same access as
+            non-containerized processes on the host.
+    [WARNING] Container Resources
+        · health-check -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · health-check -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · health-check -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Container Security Context User Group ID
+        · health-check -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · health-check -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · health-check -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Image Tag
+        · health-check -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Deployment has PodDisruptionBudget
+        · No matching PodDisruptionBudget was found
+            It's recommended to define a PodDisruptionBudget to avoid
+            unexpected downtime during Kubernetes maintenance operations, such
+            as when draining a node.
+    [WARNING] Deployment has host PodAntiAffinity
+        · Deployment does not have a host podAntiAffinity set
+            It's recommended to set a podAntiAffinity that stops multiple pods
+            from a deployment from being scheduled on the same node. This
+            increases availability in case the node becomes unavailable.
+v1/Service health-check-service                                               ✅
+apps/v1/Deployment internal-proxy-deployment                                  💥
+    [CRITICAL] Container Security Context User Group ID
+        · internal-api -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · info-app -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · internal-api -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · info-app -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · internal-api -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · info-app -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Image Tag
+        · internal-api -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+        · info-app -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Deployment has PodDisruptionBudget
+        · No matching PodDisruptionBudget was found
+            It's recommended to define a PodDisruptionBudget to avoid
+            unexpected downtime during Kubernetes maintenance operations, such
+            as when draining a node.
+    [WARNING] Deployment has host PodAntiAffinity
+        · Deployment does not have a host podAntiAffinity set
+            It's recommended to set a podAntiAffinity that stops multiple pods
+            from a deployment from being scheduled on the same node. This
+            increases availability in case the node becomes unavailable.
+v1/Service internal-proxy-api-service                                         ✅
+v1/Service internal-proxy-info-app-service                                    🤔
+    [WARNING] Service Type
+        · The service is of type NodePort
+            NodePort services should be avoided as they are insecure, and can
+            not be used together with NetworkPolicies. LoadBalancers or use of
+            an Ingress is recommended over NodePorts.
+apps/v1/Deployment system-monitor-deployment                                  💥
+    [CRITICAL] Container Image Tag
+        · system-monitor -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · system-monitor -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · system-monitor -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · system-monitor -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Security Context Privileged
+        · system-monitor -> The container is privileged
+            Set securityContext.privileged to false. Privileged containers can
+            access all devices on the host, and grants almost the same access as
+            non-containerized processes on the host.
+    [WARNING] Container Resources
+        · system-monitor -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · system-monitor -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · system-monitor -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Deployment has PodDisruptionBudget
+        · No matching PodDisruptionBudget was found
+            It's recommended to define a PodDisruptionBudget to avoid
+            unexpected downtime during Kubernetes maintenance operations, such
+            as when draining a node.
+    [WARNING] Deployment has host PodAntiAffinity
+        · Deployment does not have a host podAntiAffinity set
+            It's recommended to set a podAntiAffinity that stops multiple pods
+            from a deployment from being scheduled on the same node. This
+            increases availability in case the node becomes unavailable.
+v1/Service system-monitor-service                                             ✅
